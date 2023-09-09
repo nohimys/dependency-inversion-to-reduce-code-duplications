@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DemoPageComponent from "./DemoPage/DemoPageComponent";
 
 function App() {
   return (
     <div className="App">
-     Demo
+     <DemoPageComponent/>
     </div>
   );
 }
