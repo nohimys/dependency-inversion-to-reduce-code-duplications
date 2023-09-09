@@ -1,7 +1,7 @@
 import ISendMessageBehaviour from "../Interfaces/ISendMessageBehaviour";
 import IUser from "../Modals/IUser";
 
-class RedirectionTrigger implements ISendMessageBehaviour{
+class RedirectionTrigger implements ISendMessageBehaviour {
     onSendMessageClick(userDetails: IUser): void {
         //Mock the API Call
         const postApiCall = new Promise(resolve => {
@@ -15,8 +15,7 @@ class RedirectionTrigger implements ISendMessageBehaviour{
         postApiCall.then(() => {
             window.location.href = `https://medium.com/@nohim.godage`;
         })
-
     }
-
 }
+
 export default RedirectionTrigger;
