@@ -68,9 +68,6 @@ const UserProfile = (props: UserProfileProps) => {
         );
     }
 
-    //window.location.href = "mailto:address@dmail.com";
-    //onClick={() => {window.location.href = "mailto:address@dmail.com"}}
-
     return(
         <div style={{width:'60%', margin:"auto"}}>
             <Box sx={{
