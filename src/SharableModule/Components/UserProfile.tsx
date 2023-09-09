@@ -2,14 +2,21 @@ import {useEffect, useState} from "react";
 import UserApis from "../Utils/UserApis";
 import IUser from "../Modals/IUser";
 import {Avatar, Box, Button, CircularProgress, Typography} from "@mui/material";
+import ISendMessageBehaviour from "../Interfaces/ISendMessageBehaviour";
 
 type UserProfileProps = {
     id: number,
     showImage: boolean,
-    showCompany: boolean
+    showCompany: boolean,
+    sendMessageBehaviour: ISendMessageBehaviour
 }
 const UserProfile = (props: UserProfileProps) => {
-    const {id, showImage, showCompany} = props;
+    const {
+        id,
+        showImage,
+        showCompany,
+        sendMessageBehaviour
+    } = props;
 
     const [user, setUser] = useState<IUser | undefined>(undefined)
 
@@ -62,6 +69,7 @@ const UserProfile = (props: UserProfileProps) => {
     }
 
     //window.location.href = "mailto:address@dmail.com";
+    //onClick={() => {window.location.href = "mailto:address@dmail.com"}}
 
     return(
         <div style={{width:'60%', margin:"auto"}}>
@@ -124,7 +132,7 @@ const UserProfile = (props: UserProfileProps) => {
                    <div id={'button-pane'} style={{textAlign:'right'}}>
                        <Button
                            variant="contained"
-                           onClick={() => {window.location.href = "mailto:address@dmail.com"}}
+                           onClick={() => {sendMessageBehaviour.onSendMessageClick(user)}}
                        >
                            Send Message
                        </Button>

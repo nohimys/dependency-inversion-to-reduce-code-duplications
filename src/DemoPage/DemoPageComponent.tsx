@@ -1,4 +1,6 @@
 import UserProfile from "../SharableModule/Components/UserProfile";
+import RedirectionTrigger from "../SharableModule/Implementations/RedirectionTrigger";
+import SendEmailTrigger from "../SharableModule/Implementations/SendEmailTrigger";
 
 const DemoPageComponent = () => {
     const random1 = Math.ceil( Math.random() * 8)
@@ -13,6 +15,7 @@ const DemoPageComponent = () => {
                 id={random1 !== 0 ? random1 : 2}
                 showImage={true}
                 showCompany={false}
+                sendMessageBehaviour={new RedirectionTrigger()}
             />
             <div>
                 <hr/>
@@ -22,6 +25,7 @@ const DemoPageComponent = () => {
                 id={random2 !== 0 ? random2 : 2}
                 showImage={false}
                 showCompany={true}
+                sendMessageBehaviour={new RedirectionTrigger()}
             />
             <div>
                 <hr/>
@@ -31,6 +35,7 @@ const DemoPageComponent = () => {
                 id={random3 !== 0 ? random3 : 2}
                 showImage={false}
                 showCompany={true}
+                sendMessageBehaviour={new SendEmailTrigger()}
             />
         </div>
     );
